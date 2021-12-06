@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role == 'karyawan' || Auth::user()->role == 'leader' || Auth::user()->role == 'section_head') {
+        if(Auth::user()->role == 'siswa') {
             Alert::error('Maaf..', 'Anda dilarang masuk ke area ini.');
             return redirect()->to('/dashboard');
         }
@@ -48,9 +48,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:5|',
+            'name' => 'required',
             'email' => 'required|',
-            'username' => 'required|min:5|',
+            'username' => 'required',
             'password' => 'required|min:6|alpha_num',
             'role' => 'required',
         ],
@@ -102,7 +102,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $kelas = Kelas::all();
-        if(Auth::user()->role == 'karyawan' || Auth::user()->role == 'leader' || Auth::user()->role == 'section_head') {
+        if(Auth::user()->role == 'siswa') {
             Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
             return redirect()->to('/dashboard');
         }
@@ -119,9 +119,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|min:5|regex:/^[a-zA-Z ]*$/',
+            'name' => 'required|regex:/^[a-zA-Z ]*$/',
             'email' => 'required|min:5',
-            'username' => 'required|min:5|',
+            'username' => 'required',
             'password' => 'min:6|alpha_num',
             'role' => 'required',
         ],

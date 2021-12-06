@@ -5,7 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>@yield('title') | {{ config('app.name')}}</title>
+    <title>@yield('title') | Schoolmedia</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -45,7 +45,7 @@
             <footer class="main-footer">
                 <div class="footer-left">
                     Copyright &copy; 2021 <div class="bullet"></div> Design By <a
-                        href="google.com">Kelompok 18</a>
+                        href="https://schoolmedia.id/">Schoolmedia</a>
                 </div>
                 <div class="footer-right">
                     2.3.0

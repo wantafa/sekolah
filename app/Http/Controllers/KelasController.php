@@ -114,10 +114,11 @@ class KelasController extends Controller
 
     public function kelas()
     {
-
-        $kelas = User::where('kelas_id', '=', Auth::user()->kelas_id)->get();
-
-        $no = 1;
+        if (Auth::user()->role == 'siswa') {
+            $kelas = User::where('kelas_id', '=', Auth::user()->kelas_id)->get();
+        }
+            $kelas = User::all();
+            $no = 1;
         return view('kelas.data_kelas', compact('kelas', 'no'));
     }
 }

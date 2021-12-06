@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Note;
+use App\Kelas;
+use App\Siswa;
 use Illuminate\Http\Request;
 Use Alert;
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $note = Note::count();
-        return view('index', compact('note'));
+        $siswa = Siswa::count();
+        $kelas = Kelas::count();
+        return view('index', compact('siswa','kelas'));
     }
 }

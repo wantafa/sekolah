@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login &mdash; Schoolmedia</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
@@ -60,11 +60,11 @@
                   <div class="form-group">
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
-                      <div class="float-right">
+                      {{-- <div class="float-right">
                         <a href="auth-forgot-password.html" class="text-small">
                           Forgot Password?
                         </a>
-                      </div>
+                      </div> --}}
                     </div>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
@@ -106,10 +106,10 @@
             </div>
             </div>
             <div class="mt-5 text-center" style="color: white">
-              Tidak Punya Akun? <a href="/register" style="color: blue">Buat Akun</a>
+              Tidak Punya Akun? <a href="/daftar" style="color: blue">Buat Akun</a>
             </div>
             <div class="simple-footer" style="color: white">
-              Copyright &copy; Your APP Name 2021
+              Copyright &copy; Schoolmedia
             </div>
           </div>
       </div>

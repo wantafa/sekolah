@@ -21,10 +21,10 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Total Cerita</h4>
+                <h4>Total Siswa</h4>
               </div>
               <div class="card-body">
-                {{ $note }}
+                {{ $siswa }}
               </div>
             </div>
           </div>
@@ -36,35 +36,29 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Total User</h4>
+                <h4>Total Kelas</h4>
               </div>
               <div class="card-body">
-                10
+                {{ $kelas }}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-lg-12 col-md-12 col-6 col-sm-6">
           <div class="card">
             <div class="card-header">
               <h4>Rating</h4>
             </div>
             <div class="card-header">
-            {{-- <h4>Total Pelayanan : {{ $pelayanan->count() }}</h4> --}}
             </div>
-          {{-- @if (Auth::user()->role == 'pegawai')
-            <div class="card-body">
-              <canvas id="myChart" height="182"></canvas>
-            </div>
-          @endif --}}
             <div class="card-body">
               <canvas id="myChart" height="182"></canvas>
             </div>
           </div>
         </div>
-        </div>
+        </div> --}}
         <script src="https://demo.getstisla.com/assets/modules/chart.min.js"></script>
 
 <script>

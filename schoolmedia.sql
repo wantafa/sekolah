@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2021 at 03:06 PM
+-- Generation Time: Dec 06, 2021 at 03:42 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.3.2
 
@@ -128,6 +128,14 @@ CREATE TABLE `siswa` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id`, `nama_siswa`, `alamat`, `jenis_kelamin`, `created_at`, `updated_at`) VALUES
+(1, 'Budi', 'Jakarta', 'Laki-Laki', '2021-12-06 03:08:22', '2021-12-06 03:08:22'),
+(2, 'Andi', 'Jakarta', 'Laki-Laki', '2021-12-06 03:09:25', '2021-12-06 03:09:25');
+
 -- --------------------------------------------------------
 
 --
@@ -136,12 +144,12 @@ CREATE TABLE `siswa` (
 
 CREATE TABLE `users` (
   `id` int(11) UNSIGNED NOT NULL,
-  `siswa_id` int(11) UNSIGNED NOT NULL,
-  `kelas_id` int(11) UNSIGNED NOT NULL,
+  `siswa_id` int(11) UNSIGNED DEFAULT NULL,
+  `kelas_id` int(11) UNSIGNED DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'siswa',
   `image` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '/uploads/images/profile/default.png',
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -156,7 +164,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `siswa_id`, `kelas_id`, `name`, `username`, `email`, `role`, `image`, `email_verified_at`, `password`, `remember_token`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 0, 2, 'Dzakwan', 'dzakwan', 'admin@admin.com', 'admin', '/uploads/images/profile/Dzakwan_1606300468.jpeg', NULL, '$2a$12$vXs8QZ3t2JU/FPnCSQXcrOrBQIuysuvLbJGtpZc/dKBbI3xng0Uu.', NULL, '2021-12-03 19:50:03', '2020-10-01 21:26:07', '2021-12-03 12:50:03');
+(1, 0, NULL, 'Dzakwan', 'dzakwan', 'admin@admin.com', 'admin', '/uploads/images/profile/Dzakwan_1606300468.jpeg', NULL, '$2a$12$vXs8QZ3t2JU/FPnCSQXcrOrBQIuysuvLbJGtpZc/dKBbI3xng0Uu.', NULL, '2021-12-06 10:27:30', '2020-10-01 21:26:07', '2021-12-06 03:27:30'),
+(2, 1, 3, 'Budi', 'budi', 'budi@gmail.com', 'siswa', '/uploads/images/profile/default.png', NULL, '$2y$10$IRJE6kE.DJK14ANzzj1IyuERNG1c5.vLFT9AatrW07j1XsGtQhvyq', NULL, '2021-12-06 10:10:12', '2021-12-06 03:09:25', '2021-12-06 03:35:03'),
+(3, 2, 1, 'Andi', 'andi', 'andi@gmail.com', 'siswa', '/uploads/images/profile/default.png', NULL, '$2y$10$2MRL7XbmKN89OMrg6xDlYOHyHs5B6WVrvoIDGxbbT36QhBTkq7bpm', NULL, '2021-12-06 10:39:38', '2021-12-06 03:32:41', '2021-12-06 03:39:38');
 
 --
 -- Indexes for dumped tables
@@ -237,13 +247,13 @@ ALTER TABLE `sekolah`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -45,8 +45,8 @@
                 @foreach ($kelas as $item)
                 <tr>
                   <td>{{ $no++ }}</td>
-                  <td>{{ $item->name}}</td>
-                  <td>{{ $item->kelas->nama_kelas}}</td>
+                  <td>{{ $item->name ?? null}}</td>
+                  <td>{{ $item->kelas->nama_kelas ?? null}}</td>
                   </tr>
                 @endforeach                    
               </tbody>
